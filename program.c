@@ -1,36 +1,47 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 int main() {
-    int alt = 2200;
-    int spd  = 180;
-    int angles = 10;
-    int cap = 45;
-    int compas = 0;
-    printf("+----------------------------------------------------------+\n");
-    printf("| IAS(kts)            . . . ^ . . .              ALT(ft)   |\n");
-    printf("| %3d |                  \\  |  /                | %4d |   |\n", spd+90, alt+900);
-    printf("| %3d |               -----%2d-----              | %4d |   |\n", spd+80,angles+10,alt+800);
-    printf("| %3d |                   -----                 | %4d |   |\n", spd+70, alt+700);
-    printf("| %3d |         \\                       /       | %4d |   |\n", spd+60, alt+600);
-    printf("| %3d |          \\                     /        | %4d |   |\n", spd+50, alt+500);
-    printf("|=====|=========================================|======|===|\n", spd+40, alt+400);
-    printf("| %3d |               -----%2d-----              | %4d |   |\n", spd+30,angles, alt+300);
-    printf("| %3d |                   -----                 | %4d |   |\n", spd+20, alt+200);
-    printf("| %3d |                                         | %4d |   |\n", spd+10,alt+100);
-    printf("|>%3d<|        |---|      [ + ]     |---|       | %4d |   |\n",spd,alt);
-    printf("|-----|--------+---+--------+--------+-+--------|------|---|\n");
-    printf("| %3d |        |---|                |---|       | %4d |   |\n",spd-10, alt-100);
-    printf("| %3d |                                         | %4d |   |\n",spd-20, alt-200);
-    printf("| %3d |                   -----                 | %4d |   |\n",spd-30,alt-300);
-    printf("| %3d |               -----%2d-----              | %4d |   |\n",spd-40,angles,alt-400);
-    printf("| %3d |                   -----                 | %4d |   |\n",spd-50,alt-500);
-    printf("| %3d |               -----%2d-----              | %4d |   |\n",spd-60,angles+10,alt-600);
-    printf("| %3d |                   -----                 | %4d |   |\n",spd-70,alt-700);
-    printf("| %3d |               -----%2d-----              | %4d |   |\n",spd-80,angles+20,alt-800);
-    printf("| %3d |                                         | %4d |   |\n",spd-90,alt-900);
-    printf("|----------------------------------------------------------|\n");
-    printf("| W        %3d°            N        %3d°       E      %3d° |\n",compas, compas+90, compas+180);
-    printf("|---------------------- CAP%3d ----------------------------|\n",cap);
-    printf("+----------------------------------------------------------+\n");
-    return 0;
+ int scoreJoueur = 0;
+ int scoreOrdi = 0;
+ int manche = 1;
+ int choixJoueur;
+ int choixOrdi;
+ printf("=== PIERRE - FEUILLE - CISEAUX (5 Manches) ===\n");
+ printf("Règles : 1 = Pierre, 2 = Feuille, 3 = Ciseaux\n\n");
+ while (manche <= 5) {
+ printf("--- Manche %d/5 ---\n", manche);
+
+ // Saisie du joueur
+ printf("Votre choix (1, 2 ou 3) : ");
+ scanf("%d", &choixJoueur);
+ // Choix aléatoire de l'ordinateur (1, 2 ou 3)
+ choixOrdi = (rand() % 3) + 1;
+ printf("L'ordinateur a choisi : %d\n", choixOrdi);
+ // Détermination du gagnant de la manche
+ if (choixJoueur == choixOrdi) {
+ printf("Égalité !\n");
+ } else if ((choixJoueur == 1 && choixOrdi == 3) ||
+ (choixJoueur == 2 && choixOrdi == 1) ||
+ (choixJoueur == 3 && choixOrdi == 2)) {
+ printf("Vous gagnez cette manche !\n");
+ scoreJoueur = scoreJoueur + 1;
+ } else {
+ printf("L'ordinateur gagne cette manche !\n");
+ scoreOrdi = scoreOrdi + 1;
+ }
+ printf("Score actuel -> Vous : %d | Ordi : %d\n\n", scoreJoueur,
+scoreOrdi);
+manche = manche + 1;
+ }
+ // Bilan de la partie
+ printf("=== FIN DE LA PARTIE ===\n");
+ printf("Score final -> Vous : %d | Ordi : %d\n", scoreJoueur, scoreOrdi);
+ if (scoreJoueur > scoreOrdi) {
+ printf("Bravo, vous avez gagné la partie !\n");
+ } else if (scoreOrdi > scoreJoueur) {
+ printf("L'ordinateur remporte la partie...\n");
+ } else {
+ printf("Match nul parfait !\n");
+ }
+ return 0;
 }
