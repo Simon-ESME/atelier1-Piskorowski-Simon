@@ -51,19 +51,21 @@ scoreOrdi);
  }
  // Bilan de la partie
  void afficher_bilan (int scoreJoueur, int scoreOrdi)
- printf("=== FIN DE LA PARTIE ===\n");
- printf("Score final -> Vous : %d | Ordi : %d\n", scoreJoueur, scoreOrdi);
- if (scoreJoueur > scoreOrdi)
  {
- printf("Bravo, vous avez gagné la partie !\n");
- }
- else if (scoreOrdi > scoreJoueur)
- {
- printf("L'ordinateur remporte la partie...\n");
- }
- else
- {
- printf("Match nul parfait !\n");
- }
- return 0;
+    printf("=== FIN DE LA PARTIE ===\n");
+    printf("Score final -> Vous : %d | Ordi : %d\n", scoreJoueur, scoreOrdi);
+
+    if (scoreJoueur > scoreOrdi)
+    {
+    printf("Bravo, vous avez gagné la partie !\n");
+    }
+    else if (scoreOrdi > scoreJoueur)
+    {
+    printf("L'ordinateur remporte la partie...\n");
+    }
+    else
+    {
+    printf("Match nul parfait !\n");
+    }
+    return 0;
 }
