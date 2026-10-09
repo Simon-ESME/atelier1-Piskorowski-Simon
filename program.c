@@ -1,6 +1,25 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+void afficher_bilan (int scoreJoueur, int scoreOrdi)
+ {
+    printf("=== FIN DE LA PARTIE ===\n");
+    printf("Score final -> Vous : %d | Ordi : %d\n", scoreJoueur, scoreOrdi);
+
+    if (scoreJoueur > scoreOrdi)
+    {
+    printf("Bravo, vous avez gagné la partie !\n");
+    }
+    else if (scoreOrdi > scoreJoueur)
+    {
+    printf("L'ordinateur remporte la partie...\n");
+    }
+    else
+    {
+    printf("Match nul parfait !\n");
+    }
+    return 0;
+}
 int main()
 {
  int scoreJoueur = 0;
@@ -24,7 +43,8 @@ int main()
     {
     printf("Non valide, valeurs de 1 à 5 acceptées\n");
     }
- } while (incorrect); // Choix aléatoire de l'ordinateur (1, 2, 3, 4 ou 5)
+ } 
+ while (incorrect); // Choix aléatoire de l'ordinateur (1, 2, 3, 4 ou 5)
  choixOrdi = (rand() % 5) + 1;
  printf("L'ordinateur a choisi : %d\n", choixOrdi); // Détermination du gagnant de la manche
 if (choixJoueur == choixOrdi)
@@ -50,22 +70,8 @@ scoreOrdi);
  manche = manche + 1;
  }
  // Bilan de la partie
- void afficher_bilan (int scoreJoueur, int scoreOrdi)
- {
-    printf("=== FIN DE LA PARTIE ===\n");
-    printf("Score final -> Vous : %d | Ordi : %d\n", scoreJoueur, scoreOrdi);
+{
+afficher_bilan(scoreJoueur, scoreOrdi);
 
-    if (scoreJoueur > scoreOrdi)
-    {
-    printf("Bravo, vous avez gagné la partie !\n");
-    }
-    else if (scoreOrdi > scoreJoueur)
-    {
-    printf("L'ordinateur remporte la partie...\n");
-    }
-    else
-    {
-    printf("Match nul parfait !\n");
-    }
-    return 0;
+return 0;
 }
