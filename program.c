@@ -2,6 +2,8 @@
 #include <stdbool.h>
 #include <stdlib.h>
 void afficher_bilan(int scoreJoueur, int scoreOrdi);
+void afficher_choix(int choix);
+
 int main()
 {
     int scoreJoueur = 0;
@@ -50,11 +52,12 @@ int main()
     }
     // Bilan de la partie
 
-        afficher_bilan(scoreJoueur, scoreOrdi);
+    afficher_bilan(scoreJoueur, scoreOrdi);
 
-        return 0;
-    }
-    void afficher_bilan(int scoreJoueur, int scoreOrdi)
+    return 0;
+}
+
+void afficher_bilan(int scoreJoueur, int scoreOrdi)
 {
     printf("=== FIN DE LA PARTIE ===\n");
     printf("Score final -> Vous : %d | Ordi : %d\n", scoreJoueur, scoreOrdi);
@@ -71,4 +74,31 @@ int main()
     {
         printf("Match nul parfait !\n");
     }
+}
+    //Choix des fonctions
+void afficher_choix(choix)
+{
+    void afficher_choix(int choix)
+{
+    if (choix == 1)
+    {
+        printf("Pierre");
+    }
+    else if (choix == 2)
+    {
+        printf("Feuille");
+    }
+    else if (choix == 3)
+    {
+        printf("Ciseaux");
+    }
+    else if (choix == 4)
+    {
+        printf("Lezard");
+    }
+    else if (choix == 5)
+    {
+        printf("Spock");
+    }
+}
 }
