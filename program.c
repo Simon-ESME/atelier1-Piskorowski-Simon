@@ -50,6 +50,7 @@ scoreOrdi);
  manche = manche + 1;
  }
  // Bilan de la partie
+ void afficher_bilan (int scoreJoueur, int scoreOrdi)
  printf("=== FIN DE LA PARTIE ===\n");
  printf("Score final -> Vous : %d | Ordi : %d\n", scoreJoueur, scoreOrdi);
  if (scoreJoueur > scoreOrdi)
