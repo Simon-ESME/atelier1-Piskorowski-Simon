@@ -3,6 +3,9 @@
 #include <stdlib.h>
 void afficher_bilan(int scoreJoueur, int scoreOrdi);
 void afficher_choix(int choix);
+bool partie_en_cours(int );
+int saisie_joueur(int choixJoueur);
+bool joueur1_gagne(int );
 
 int main()
 {
