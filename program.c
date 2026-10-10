@@ -111,35 +111,26 @@ void afficher_choix(int choix)
     else if (choix == 2)
 
     {
-
         printf("Feuille");
-
     }
 
     else if (choix == 3)
 
     {
-
         printf("Ciseaux");
-
     }
 
     else if (choix == 4)
 
     {
-
         printf("Lezard");
-
     }
 
     else if (choix == 5)
 
     {
-
         printf("Spock");
-
     }
-
 }
  
 void afficher_bilan(int scoreJoueur, int scoreOrdi)
@@ -149,9 +140,7 @@ void afficher_bilan(int scoreJoueur, int scoreOrdi)
     if (scoreJoueur > scoreOrdi)
 
     {
-
         printf("Bravo, vous avez gagné la partie !\n");
-
     }
 
     else if (scoreOrdi > scoreJoueur)
