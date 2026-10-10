@@ -107,7 +107,7 @@ void afficher_choix(int choix)
     {
         printf("Pierre");
     }
-
+    
     else if (choix == 2)
 
     {
