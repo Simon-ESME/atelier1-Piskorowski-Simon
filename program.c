@@ -45,7 +45,7 @@ int main()
         }
 
         else
-        
+
         {
             printf("L'ordinateur gagne cette manche !\n");
             scoreOrdi = scoreOrdi + 1;
@@ -59,14 +59,13 @@ int main()
     afficher_bilan(scoreJoueur, scoreOrdi);
     return 0;
 }
-bool partie_en_cours(int manche, int scoreJoueur, int scoreOrdi)
 
+bool partie_en_cours(int manche, int scoreJoueur, int scoreOrdi)
 {
     return manche <= 7 && scoreJoueur - scoreOrdi < 2 && scoreOrdi - scoreJoueur < 2;
 }
  
 int saisie_joueur(void)
-
 {
     int choix;
     bool incorrect;
@@ -83,23 +82,16 @@ int saisie_joueur(void)
 
             {
                 printf(", ");
-
             }
-
         }
 
         printf(") : ");
- 
         scanf("%d", &choix);
-
         incorrect = choix < 1 || 5 < choix;
 
         if (incorrect)
-
         {
-
             printf("Non valide, valeurs de 1 à 5 acceptées\n");
-
         }
 
     } while (incorrect);
@@ -109,15 +101,11 @@ int saisie_joueur(void)
 }
  
 void afficher_choix(int choix)
-
 {
-
     if (choix == 1)
 
     {
-
         printf("Pierre");
-
     }
 
     else if (choix == 2)
