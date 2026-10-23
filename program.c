@@ -24,9 +24,12 @@ int main()
  
     // Vaisseau
     world[10][2] = 1;
-    world[11][3] = 1;
+    world[10][5] = 1;
+    world[11][1] = 1;
     world[12][1] = 1;
-    world[12][2] = 1;
+    world[12][5] = 1;
+    world[13][1] = 1;
+    world[13][2] = 1;
     world[12][3] = 1;
  
     // Affichage du tableau world
