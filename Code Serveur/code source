@@ -1,0 +1,22 @@
+
+
+# Compilation du jeu "La soiree etudiante" (interface graphique SDL2)
+#   make        -> programme natif : ./jeu  (jeu.exe sous Windows)
+#   make web    -> version navigateur (WebAssembly) dans le dossier web/
+#   make clean  -> supprime ce qui a ete genere
+ 
+CC = gcc
+CFLAGS = -Wall -Wextra -O2 $(shell sdl2-config --cflags)
+LIBS = $(shell sdl2-config --libs)
+SRC = soiree_etudiante_gui.c
+ 
+jeu: $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o jeu $(LIBS)
+ 
+web: $(SRC)
+	mkdir -p web
+	emcc $(SRC) -O2 -sUSE_SDL=2 -o web/index.html
+ 
+clean:
+	rm -rf jeu jeu.exe web
+ 
